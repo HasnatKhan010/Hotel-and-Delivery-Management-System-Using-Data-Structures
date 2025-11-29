@@ -2,7 +2,7 @@
 #define AVL_H
 
 #include <iostream>
-#include <algorithm> // for max
+#include <algorithm> 
 #include "Display.h"
 
 using namespace std;
@@ -66,27 +66,24 @@ private:
         else if (val > node->data)
             node->right = insertRec(node->right, val);
         else
-            return node; // Equal keys not allowed
+            return node; 
 
         node->height = 1 + max(height(node->left), height(node->right));
 
         int balance = getBalance(node);
 
-        // Left Left Case
         if (balance > 1 && val < node->left->data)
             return rightRotate(node);
 
-        // Right Right Case
         if (balance < -1 && val > node->right->data)
             return leftRotate(node);
 
-        // Left Right Case
         if (balance > 1 && val > node->left->data) {
             node->left = leftRotate(node->left);
             return rightRotate(node);
         }
 
-        // Right Left Case
+
         if (balance < -1 && val < node->right->data) {
             node->right = rightRotate(node->right);
             return leftRotate(node);
@@ -94,7 +91,6 @@ private:
 
         return node;
     }
-
     void inorderRec(AVLNode<T>* node) const {
         if (node != nullptr) {
             inorderRec(node->left);
