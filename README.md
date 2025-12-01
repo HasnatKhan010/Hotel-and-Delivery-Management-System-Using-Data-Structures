@@ -86,13 +86,3 @@ Display.h
 : UI formatting and ASCII art.
 
 
-
-
-💻 How to Compile and Run
-Prerequisites: G++ Compiler (MinGW for Windows)
-
-Open a terminal in the project directory.
-Compile the project:
-g++ main.cpp -o food_delivery_system
-Run the executable:
-./food_delivery_system
