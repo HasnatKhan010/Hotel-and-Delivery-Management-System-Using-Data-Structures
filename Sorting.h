@@ -1,6 +1,6 @@
 #ifndef SORTING_H
 #define SORTING_H
-
+//sorting algorithms: merge sort and quick sort
 #include "Display.h"
 
 template <typename T>
