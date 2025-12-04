@@ -23,10 +23,20 @@ public:
         currentOrder = order;
         isAvailable = false;
     }
+
     void completeDelivery() {
         isAvailable = true;
         currentOrder = Order(); // Reset
     }
+
     bool operator==(const DeliveryAgent& other) const {
         return id == other.id;
     }
+
+    friend ostream& operator<<(ostream& os, const DeliveryAgent& da) {
+        os << "[" << da.id << "] " << da.name << " (" << (da.isAvailable ? "Available" : "Busy") << ")";
+        return os;
+    }
+};
+
+#endif
