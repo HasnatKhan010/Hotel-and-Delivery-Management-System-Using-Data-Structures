@@ -27,3 +27,6 @@ public:
         isAvailable = true;
         currentOrder = Order(); // Reset
     }
+    bool operator==(const DeliveryAgent& other) const {
+        return id == other.id;
+    }
