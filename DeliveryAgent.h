@@ -23,3 +23,7 @@ public:
         currentOrder = order;
         isAvailable = false;
     }
+    void completeDelivery() {
+        isAvailable = true;
+        currentOrder = Order(); // Reset
+    }
