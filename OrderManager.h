@@ -31,4 +31,17 @@ public:
         return Order();
     }
 
+    void displayActiveOrders() {
+        Display::printHeader("Active Orders");
+        // Queue doesn't support traversal easily without dequeuing.
+        // For display, we might need a different structure or just peek front.
+        if (activeOrders.isEmpty()) {
+            cout << "No active orders.\n";
+        } else {
+            cout << "Next Order: " << activeOrders.front() << "\n";
+            cout << "(Total Active: " << activeOrders.size() << ")\n";
+        }
+    }
+};
 
+#endif
