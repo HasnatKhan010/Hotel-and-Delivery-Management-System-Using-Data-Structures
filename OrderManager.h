@@ -21,3 +21,14 @@ public:
         Display::printSuccess("Order Placed Successfully! ID: " + order.orderID);
     }
 
+    Order getNextOrder() {
+        if (!activeOrders.isEmpty()) {
+            Display::printSystemLog("Dequeuing Order from Active Queue...");
+            Order o = activeOrders.front();
+            activeOrders.dequeue();
+            return o;
+        }
+        return Order();
+    }
+
+
