@@ -42,4 +42,14 @@ public:
     // Let's just rely on careful usage for now or add a copy constructor to LinkedList.
     // I'll add a TODO to fix LinkedList copy semantics if I have time, but for now let's proceed.
     
+    bool operator==(const Order& other) const {
+        return orderID == other.orderID;
+    }
 
+    friend ostream& operator<<(ostream& os, const Order& order) {
+        os << "Order " << order.orderID << " [" << order.status << "] Total: $" << order.totalAmount;
+        return os;
+    }
+};
+
+#endif
