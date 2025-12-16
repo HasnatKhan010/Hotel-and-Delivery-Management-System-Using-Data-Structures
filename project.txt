@@ -1,0 +1,135 @@
+================================================================================
+FOOD DELIVERY MANAGEMENT SYSTEM (DSA PROJECT)
+================================================================================
+
+1. PROJECT OVERVIEW
+-------------------
+This project is a comprehensive Console-based Food Delivery Management System developed in C++. 
+It simulates a real-world food delivery ecosystem connecting Customers, Restaurants, and Delivery Agents. 
+The system utilizes efficient Data Structures and Algorithms to manage data, optimize routes, and handle operations.
+
+2. KEY FEATURES
+---------------
+[Customer Portal]
+- User Registration & Login (Secure ID mapping)
+- Browse Restaurants & Menus
+- Place Orders (Real-time processing)
+- View Order History (LIFO access)
+- Interactive Delivery Map (Visualizing location)
+
+[Restaurant Portal]
+- Manage Menu Items (Add/Update)
+- View & Process Pending Orders (FIFO processing)
+- Categorized Restaurant Management
+
+[Delivery Portal]
+- Manage Delivery Agents
+- Assign Agents to Active Orders
+- Route Optimization
+
+[System & Analytics]
+- View Active Orders
+- City Map Visualization (ASCII Art)
+- Shortest Path Calculation (Navigation)
+- Network Optimization (MST)
+
+3. DATA STRUCTURES USED
+-----------------------
+The project demonstrates the practical application of the following data structures:
+
+1. LINKED LIST
+   - Used for: Storing Restaurants, Menu Items, and Delivery Agents.
+   - Reason: Dynamic size, easy insertion/deletion.
+
+2. STACK (LIFO)
+   - Used for: Customer Order History.
+   - Reason: Users typically want to see their most recent orders first.
+
+3. QUEUE (FIFO)
+   - Used for: Order Processing (Global Order Queue & Restaurant Pending Queue).
+   - Reason: Orders should be processed in the order they are received (First-Come-First-Serve).
+
+4. HASH TABLE
+   - Used for: Customer Management (Login/Lookup).
+   - Reason: Provides O(1) average time complexity for looking up customers by ID/Phone.
+
+5. GRAPH (ADJACENCY LIST)
+   - Used for: City Map representation.
+   - Reason: Efficiently represents cities (nodes) and distances (edges) for route calculations.
+
+6. HEAP (PRIORITY QUEUE)
+   - Used for: Dijkstra's Algorithm.
+   - Reason: Efficiently fetching the nearest city during shortest path calculation.
+
+7. UNION-FIND (DISJOINT SET)
+   - Used for: Kruskal's Algorithm (MST).
+   - Reason: Efficiently managing connected components to detect cycles.
+
+4. ALGORITHMS IMPLEMENTED
+-------------------------
+1. DIJKSTRA'S ALGORITHM
+   - Purpose: Finding the shortest path between two cities (e.g., Restaurant to Customer).
+   - Application: Delivery route optimization.
+
+2. PRIM'S & KRUSKAL'S ALGORITHM
+   - Purpose: Minimum Spanning Tree (MST).
+   - Application: Optimizing the delivery network to connect all locations with minimum cost/distance.
+
+3. SEARCHING ALGORITHMS
+   - Linear Search: Finding items in small lists (e.g., Menu items).
+   - Binary Search: Optimized searching in sorted datasets.
+
+4. SORTING ALGORITHMS
+   - Quick Sort / Merge Sort: Sorting arrays for efficient searching or display.
+
+5. FILE STRUCTURE
+-----------------
+[Core System]
+- main.cpp              : Entry point, handles the Main Menu and Portal logic.
+- IslamabadMap.h        : Handles ASCII Map visualization and highlighting.
+
+[Managers (Logic Layer)]
+- CustomerManager.h     : Manages Customer login, registration, and data.
+- RestaurantManager.h   : Manages Restaurants and their Menus.
+- OrderManager.h        : Handles Order placement and tracking.
+- DeliveryManager.h     : Manages Agents and assignments.
+
+[Models (Data Layer)]
+- Customer.h            : Customer entity.
+- Restaurant.h          : Restaurant entity.
+- MenuItem.h            : Menu Item entity.
+- Order.h               : Order entity.
+- DeliveryAgent.h       : Delivery Agent entity.
+
+[Data Structures (Lib)]
+- LinkedList.h          : Generic Singly Linked List.
+- Stack.h               : Generic Stack implementation.
+- Queue.h               : Generic Queue implementation.
+- HashTable.h           : Hash Table with chaining for collision resolution.
+- Graph.h               : Graph implementation (Adjacency List).
+- Heap.h                : Min-Heap implementation.
+- BST.h / AVL.h         : Binary Search Tree implementations (available for extensions).
+
+[Algorithms (Lib)]
+- Dijkstra.h            : Shortest Path implementation.
+- MST.h                 : Prim's and Kruskal's implementations.
+- Searching.h           : Linear and Binary Search.
+- Sorting.h             : Quick, Merge, and other sorts.
+
+[UI/Utils]
+- Display.h             : Helper for UI formatting, colors, and ASCII art.
+
+6. HOW TO COMPILE AND RUN
+-------------------------
+Prerequisites: G++ Compiler (MinGW for Windows)
+
+1. Open Terminal in the project directory.
+2. Compile the project using the following command:
+   g++ main.cpp -o food_delivery_system
+
+3. Run the executable:
+   ./food_delivery_system
+
+(Note: Ensure all header files are in the same directory or properly linked).
+
+================================================================================
